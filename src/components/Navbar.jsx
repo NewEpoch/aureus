@@ -15,7 +15,7 @@ const Navbar = () => {
 
   const handleScroll = () => {
     const offset = window.scrollY;
-    setIsSticky(offset > 0); // Sayfa kaydırıldığında isSticky durumunu güncelle
+    setIsSticky(offset > 0); 
   };
 
   useEffect(() => {
@@ -45,7 +45,7 @@ const Navbar = () => {
           <a href="#" className="text-gray-700 hover:text-blue-500">Hakkımızda</a>
         </div>
 
-        {/* Dil Seçeneği */}
+        {/* Dil */}
         <div className="relative">
           <button onClick={toggleLanguageDropdown} className="text-gray-700 hover:text-blue-500 focus:outline-none">
             Diller

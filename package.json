@@ -1,31 +1,25 @@
 {
-  "name": "aureus",
+  "name": "demo",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-tailwind/react": "^2.1.10",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "iconoir-react": "^7.9.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^6.27.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4",
-    "@popperjs/core": "^2.11.8",
-    "@tailwindcss/line-clamp": "^0.4.4",
-    "alpinejs": "^3.13.7",
-    "glightbox": "^3.3.0",
-    "lucide": "^0.364.0",
-    "remixicon": "^4.2.0",
-    "sass": "^1.72.0",
-    "swiper": "^10.2.0",
-    "tailwindcss": "3.4.1"
+    "swiper": "^11.1.14",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "clean": "rimraf dist"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -48,17 +42,6 @@
   "devDependencies": {
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.13",
-    "@tailwindcss/forms": "^0.5.7",
-   
-    "fs-extra": "^11.1.1",
-    
-    "rimraf": "^5.0.1",
-    "rollup-plugin-copy": "^3.4.0",
-    "vite": "^4.4.9",
-    "vite-plugin-handlebars": "^1.6.0"
+    "tailwindcss": "^3.4.13"
   }
-
- 
- 
 }

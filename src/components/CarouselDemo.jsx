@@ -12,7 +12,7 @@ import slide3 from '../images/DALL·E 2024-10-14 00.47.11 - A close-up view of m
 
 export default function CarouselDemo() {
   return (
-    <div className="w-full mx-auto mt-20 -mt-16"> {/* Negatif margin ayarlandı */}
+    <div className="w-full mx-auto mt-20 -mt-16"> {/* Negatif margin */}
       <Swiper
         modules={[Navigation, Pagination]}
         navigation
