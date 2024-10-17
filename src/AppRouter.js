@@ -7,6 +7,8 @@ import About from './pages/About';
 import Product1 from './pages/Product1'; 
 import Product2 from './pages/Product2'; 
 import Product3 from './pages/Product3'; 
+import ProductCard from './components/ProductCard';
+
 
 const AppRouter = () => {
   return (
@@ -20,6 +22,8 @@ const AppRouter = () => {
         <Route path="/products/urun3" element={<Product3 />} />
       </Routes>
       <CarouselDemo/>
+      <ProductCard/>
+
     </Router>
   );
 };
