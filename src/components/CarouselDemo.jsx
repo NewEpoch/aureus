@@ -12,7 +12,7 @@ import slide3 from '../images/DALL·E 2024-10-14 00.47.11 - A close-up view of m
 
 export default function CarouselDemo() {
   return (
-    <div className="w-full mx-auto mt-20 -mt-16"> {/* Negatif margin */}
+    <div className="w-full mx-auto mt-14 -mt-16"> {/* Negatif margin */}
       <Swiper
         modules={[Navigation, Pagination]}
         navigation
@@ -27,15 +27,15 @@ export default function CarouselDemo() {
         className="w-full"
       >
         <SwiperSlide>
-          <img src={slide1} alt="Slide 1" className="h-screen w-full object-cover" />
+          <img src={slide1} alt="Slide 1" className="h-screen w-full object-cover top-0" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={slide2} alt="Slide 2" className="h-screen w-full object-cover" />
+          <img src={slide2} alt="Slide 2" className="h-screen w-full object-cover top-0" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={slide3} alt="Slide 3" className="h-screen w-full object-cover" />
+          <img src={slide3} alt="Slide 3" className="h-screen w-full object-cover top-0" />
         </SwiperSlide>
       </Swiper>
     </div>
   );
-}
+} 

@@ -1,12 +1,12 @@
 // src/AppRouter.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar'; // Navbar bileşeni
-import CarouselDemo from './components/CarouselDemo'; // Ana sayfa bileşeni
-import Hakkimizda from './pages/Hakkimizda'; // Hakkımızda sayfası
-import Urun1 from './pages/Urun1'; // Ürün 1 sayfası
-import Urun2 from './pages/Urun2'; // Ürün 2 sayfası
-import Urun3 from './pages/Urun3'; // Ürün 3 sayfası
+import Navbar from './components/Navbar'; 
+import CarouselDemo from './components/CarouselDemo'; 
+import About from './pages/About'; 
+import Product1 from './pages/Product1'; 
+import Product2 from './pages/Product2'; 
+import Product3 from './pages/Product3'; 
 
 const AppRouter = () => {
   return (
@@ -14,10 +14,10 @@ const AppRouter = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<CarouselDemo />} />
-        <Route path="/hakkimizda" element={<Hakkimizda />} />
-        <Route path="/urunler/urun1" element={<Urun1 />} />
-        <Route path="/urunler/urun2" element={<Urun2 />} />
-        <Route path="/urunler/urun3" element={<Urun3 />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/products/product1" element={<Product1 />} />
+        <Route path="/products/urun2" element={<Product2 />} />
+        <Route path="/products/urun3" element={<Product3 />} />
       </Routes>
       <CarouselDemo/>
     </Router>

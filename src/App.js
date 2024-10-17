@@ -1,6 +1,6 @@
 // src/App.js
 import React from 'react';
-import AppRouter from './AppRouter'; // AppRouter bileşenini içe aktar
+import AppRouter from './AppRouter'; 
 
 const App = () => {
   return <AppRouter />;

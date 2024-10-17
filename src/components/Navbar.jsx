@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+
+  const dropdownRef = useRef(null);
+  const languageDropdownRef = useRef(null);
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
@@ -15,13 +18,30 @@ const Navbar = () => {
 
   const handleScroll = () => {
     const offset = window.scrollY;
-    setIsSticky(offset > 0); 
+    setIsSticky(offset > 0);
+  };
+
+  const handleClickOutside = (event) => {
+    if (
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target)
+    ) {
+      setDropdownOpen(false);
+    }
+    if (
+      languageDropdownRef.current &&
+      !languageDropdownRef.current.contains(event.target)
+    ) {
+      setLanguageDropdownOpen(false);
+    }
   };
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
+    document.addEventListener('click', handleClickOutside);
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('click', handleClickOutside);
     };
   }, []);
 
@@ -30,31 +50,31 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex space-x-4">
           <a href="#" className="text-gray-700 hover:text-blue-500">Home</a>
-          <div className="relative">
+          <div className="relative" ref={dropdownRef}>
             <button onClick={toggleDropdown} className="text-gray-700 hover:text-blue-500 focus:outline-none">
-              Ürünler
+              Products
             </button>
             {dropdownOpen && (
               <div className="absolute left-0 mt-2 w-48 bg-white border rounded shadow-lg">
-                <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-200">Ürün 1</a>
-                <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-200">Ürün 2</a>
-                <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-200">Ürün 3</a>
+                <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-200">Product 1</a>
+                <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-200">Product 2</a>
+                <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-200">Product 3</a>
               </div>
             )}
           </div>
-          <a href="#" className="text-gray-700 hover:text-blue-500">Hakkımızda</a>
+          <a href="#" className="text-gray-700 hover:text-blue-500">About</a>
         </div>
 
-        {/* Dil */}
-        <div className="relative">
+        {/* Language Dropdown */}
+        <div className="relative" ref={languageDropdownRef}>
           <button onClick={toggleLanguageDropdown} className="text-gray-700 hover:text-blue-500 focus:outline-none">
-            Diller
+            Languages
           </button>
           {languageDropdownOpen && (
             <div className="absolute right-0 mt-2 w-48 bg-white border rounded shadow-lg">
-              <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-200">Almanca</a>
-              <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-200">Polonyaca</a>
-              <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-200">İspanyolca</a>
+              <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-200">German</a>
+              <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-200">Polish</a>
+              <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-200">English</a>
             </div>
           )}
         </div>
