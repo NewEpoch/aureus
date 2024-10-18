@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import img1 from '../images/Damla-Kehribar-Bileklik-resim-619.jpg'; // Adjust the path as needed
+import img1 from '../images/Damla-Kehribar-Bileklik-resim-619.jpg'; 
 import img2 from '../images/kehribar-nasil-olusur.jpg';
 
 const ProductCard = () => {
@@ -15,12 +15,12 @@ const ProductCard = () => {
     setPrice(priceValue);
   };
 
-  // Create an array of product data
+  
   const products = [
     { img1, img2, title: "Demonstrate Vonke", valueText: "LightSalmon", price: "$130.00" },
     { img1, img2, title: "Demonstrate Vonke", valueText: "LightSalmon", price: "$130.00" },
     { img1, img2, title: "Demonstrate Vonke", valueText: "LightSalmon", price: "$130.00" },
-    // Add more product data as needed
+    
   ];
 
   return (
@@ -30,12 +30,11 @@ const ProductCard = () => {
       className="pb-6 h-auto xl:pb-0"
     >
       <SwiperSlide>
-      <div className="text-center mt-10">
-          <h2 className="text-4xl font-bold">Products</h2>
+        <div className="text-center mt-20">
+          <h1 className="text-4xl font-bold">Products</h1>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mr-20 ml-20 mt-20 mb-52">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 m-52 ">
           {products.map((product, index) => (
-           
             <div className="group" key={index}>
               <div className="inline-block overflow-hidden h-full w-full relative">
                 <a href="#" className="block transition-all duration-500 transform group-hover:scale-105">
@@ -46,7 +45,7 @@ const ProductCard = () => {
                   <div className="flex items-center justify-between gap-1 xl:gap-5">
                     <div className="flex-shrink">
                       <div className="h-10 w-10 hidden md:flex items-center justify-center bg-white drop-shadow-lg text-zinc-950 hover:text-yellow-700 transition-all duration-500 p-2">
-                        {/* Wishlist Icon */}
+                        
                       </div>
                     </div>
                     <div className="flex-grow">
@@ -56,7 +55,7 @@ const ProductCard = () => {
                     </div>
                     <div className="flex-shrink">
                       <div className="h-10 w-10 hidden md:flex items-center justify-center bg-white drop-shadow-lg text-zinc-950 hover:text-yellow-700 transition-all duration-500 p-2">
-                        {/* Lookup Icon */}
+                       
                       </div>
                     </div>
                   </div>
@@ -98,7 +97,7 @@ const ProductCard = () => {
           ))}
         </div>
       </SwiperSlide>
-      {/* Add more SwiperSlide components if needed */}
+    
     </Swiper>
   );
 };
