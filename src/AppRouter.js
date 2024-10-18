@@ -21,7 +21,7 @@ const AppRouter = () => {
         <Route path="/products/product1" element={<Product1 />} />
         <Route path="/products/urun2" element={<Product2 />} />
         <Route path="/products/urun3" element={<Product3 />} />
-        <Route path="/contact" element={<Contact /> } />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <CarouselDemo/>
       <ProductCard/>
