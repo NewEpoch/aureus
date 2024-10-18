@@ -10,7 +10,6 @@ import Product3 from './pages/Product3';
 import ProductCard from './components/ProductCard';
 import Contact from './pages/Contact';
 
-
 const AppRouter = () => {
   return (
     <Router>
@@ -25,7 +24,6 @@ const AppRouter = () => {
       </Routes>
       <CarouselDemo/>
       <ProductCard/>
-
     </Router>
   );
 };

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const contactMethods = [
   {
@@ -18,7 +19,7 @@ const contactMethods = [
         />
       </svg>
     ),
-    contact: "info@cloudifiers.co.uk",
+    contact: "mail-adresi.....",
   },
   {
     icon: (
@@ -37,7 +38,7 @@ const contactMethods = [
         />
       </svg>
     ),
-    contact: "+447490785149",
+    contact: "tel.......",
   },
   {
     icon: (
@@ -61,7 +62,7 @@ const contactMethods = [
         />
       </svg>
     ),
-    contact: "244 Chase Road, London, United Kingdom, N14 6HH",
+    contact: "adres....",
   },
 ];
 
@@ -72,13 +73,8 @@ const Contact = () => {
     company: "",
     message: "",
   });
+  const navigate = useNavigate(); // useNavigate
 
-  // const submitForm = async (e) => {
-  //   e.preventDefault();
-  //   // Form verilerini buradan Node.js sunucusuna gönderebilirsiniz
-  //   // ...
-  //   console.log('Form data:', formData);
-  // };
   const submitForm = async (e) => {
     e.preventDefault();
 
@@ -97,6 +93,7 @@ const Contact = () => {
       if (response.ok) {
         const result = await response.json();
         console.log(result);
+        navigate("/contact-success"); // Form gönderimi başarılıysa yönlendirme yap
       } else {
         console.error("Form data submission failed");
       }
@@ -164,7 +161,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-emerald-300  shadow-sm rounded-lg"
+                  className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-emerald-300 shadow-sm rounded-lg"
                 />
               </div>
               <div>
@@ -175,7 +172,7 @@ const Contact = () => {
                   value={formData.company}
                   onChange={handleChange}
                   required
-                  className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-emerald-300  shadow-sm rounded-lg"
+                  className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-emerald-300 shadow-sm rounded-lg"
                 />
               </div>
               <div>
@@ -190,7 +187,7 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="w-full px-4 py-2 text-white font-medium text-lg bg-teal-500  hover:bg-teal-600  active:bg-teal-500  rounded-lg duration-150"
+                className="w-full px-4 py-2 text-white font-medium text-lg bg-teal-500 hover:bg-teal-600 active:bg-teal-500 rounded-lg duration-150"
               >
                 Submit
               </button>
@@ -202,4 +199,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Contact;
