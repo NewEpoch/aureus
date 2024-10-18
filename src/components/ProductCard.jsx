@@ -30,7 +30,10 @@ const ProductCard = () => {
       className="pb-6 h-auto xl:pb-0"
     >
       <SwiperSlide>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4  m-52">
+      <div className="text-center mt-10">
+          <h2 className="text-4xl font-bold">Products</h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mr-20 ml-20 mt-20 mb-52">
           {products.map((product, index) => (
            
             <div className="group" key={index}>
