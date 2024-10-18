@@ -8,6 +8,7 @@ import Product1 from './pages/Product1';
 import Product2 from './pages/Product2'; 
 import Product3 from './pages/Product3'; 
 import ProductCard from './components/ProductCard';
+import Contact from './pages/Contact';
 
 
 const AppRouter = () => {
@@ -20,6 +21,7 @@ const AppRouter = () => {
         <Route path="/products/product1" element={<Product1 />} />
         <Route path="/products/urun2" element={<Product2 />} />
         <Route path="/products/urun3" element={<Product3 />} />
+        <Route path="/contact" element={<Contact /> } />
       </Routes>
       <CarouselDemo/>
       <ProductCard/>
