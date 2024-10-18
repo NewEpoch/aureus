@@ -46,12 +46,12 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`bg-white bg-opacity-70 shadow-md fixed w-full z-20 transition-all duration-300 ${isSticky ? 'top-0' : 'top-0'}`}>
-      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <nav className={`bg-orange-400 bg-opacity-70 shadow-md fixed w-full h-20 z-20 transition-all duration-300 ${isSticky ? 'top-0' : 'top-0'}`}>
+      <div className="max-w-7xl mx-auto my-5 px-4 py-4 flex justify-between items-center">
         <div className="flex space-x-4">
-          <a href="#" className="text-gray-700 hover:text-blue-500">Home</a>
+          <a href="#" className="text-gray-700 text-xl hover:text-blue-500">Home</a>
           <div className="relative" ref={dropdownRef}>
-            <button onClick={toggleDropdown} className="text-gray-700 hover:text-blue-500 focus:outline-none">
+            <button onClick={toggleDropdown} className="text-gray-700 text-xl hover:text-blue-500 focus:outline-none">
               Products
             </button>
             {dropdownOpen && (
@@ -62,12 +62,13 @@ const Navbar = () => {
               </div>
             )}
           </div>
-          <a href="#" className="text-gray-700 hover:text-blue-500">About</a>
+          <a href="#" className="text-gray-700 text-xl  hover:text-blue-500">About</a>
+          <a href="#" className="text-gray-700 text-xl hover:text-blue-500">Contact</a>
         </div>
 
         {/* Language Dropdown */}
         <div className="relative" ref={languageDropdownRef}>
-          <button onClick={toggleLanguageDropdown} className="text-gray-700 hover:text-blue-500 focus:outline-none">
+          <button onClick={toggleLanguageDropdown} className="text-gray-700 text-xl hover:text-blue-500 focus:outline-none">
             Languages
           </button>
           {languageDropdownOpen && (
