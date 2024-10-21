@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -22,10 +23,7 @@ const Navbar = () => {
   };
 
   const handleClickOutside = (event) => {
-    if (
-      dropdownRef.current &&
-      !dropdownRef.current.contains(event.target)
-    ) {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
       setDropdownOpen(false);
     }
     if (
@@ -49,21 +47,21 @@ const Navbar = () => {
     <nav className={`bg-orange-400 bg-opacity-70 shadow-md fixed w-full h-20 z-20 transition-all duration-300 ${isSticky ? 'top-0' : 'top-0'}`}>
       <div className="max-w-7xl mx-auto my-5 px-4 py-4 flex justify-between items-center">
         <div className="flex space-x-4">
-          <a href="#" className="text-gray-700 text-xl hover:text-blue-500">Home</a>
+          <Link to="/" className="text-gray-700 text-xl hover:text-blue-500">Home</Link>
           <div className="relative" ref={dropdownRef}>
             <button onClick={toggleDropdown} className="text-gray-700 text-xl hover:text-blue-500 focus:outline-none">
               Products
             </button>
             {dropdownOpen && (
               <div className="absolute left-0 mt-2 w-48 bg-white border rounded shadow-lg">
-                <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-200">Product 1</a>
-                <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-200">Product 2</a>
-                <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-200">Product 3</a>
+                <Link to="/products/product1" className="block px-4 py-2 text-gray-700 hover:bg-gray-200">Product 1</Link>
+                <Link to="/products/urun2" className="block px-4 py-2 text-gray-700 hover:bg-gray-200">Product 2</Link>
+                <Link to="/products/urun3" className="block px-4 py-2 text-gray-700 hover:bg-gray-200">Product 3</Link>
               </div>
             )}
           </div>
-          <a href="#" className="text-gray-700 text-xl  hover:text-blue-500">About</a>
-          <a href="#" className="text-gray-700 text-xl hover:text-blue-500">Contact</a>
+          <Link to="/about" className="text-gray-700 text-xl hover:text-blue-500">About</Link>
+          <Link to="/contact" className="text-gray-700 text-xl hover:text-blue-500">Contact</Link>
         </div>
 
         {/* Language Dropdown */}

@@ -35,6 +35,7 @@ export default function CarouselDemo() {
         <SwiperSlide>
           <img src={slide3} alt="Slide 3" className="h-screen w-full object-cover top-0" />
         </SwiperSlide>
+        
       </Swiper>
     </div>
   );
