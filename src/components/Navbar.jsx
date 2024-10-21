@@ -44,7 +44,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`bg-orange-400 bg-opacity-70 shadow-md fixed w-full h-20 z-20 transition-all duration-300 ${isSticky ? 'top-0' : 'top-0'}`}>
+    <nav className={`bg-orange-400 bg-opacity-70 shadow-md fixed w-full h-24 z-20 transition-all duration-300 ${isSticky ? 'top-0' : 'top-0'}`}>
       <div className="max-w-7xl mx-auto my-5 px-4 py-4 flex justify-between items-center">
         <div className="flex space-x-4">
           <Link to="/" className="text-gray-700 text-xl hover:text-blue-500">Home</Link>
