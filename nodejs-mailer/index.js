@@ -13,7 +13,7 @@ require("dotenv").config();
 const mail = process.env?.mail;
 const password = process.env?.password;
 
-// CORS middleware'i ekleyin
+// CORS middleware
 app.use(cors());
 
 // Middleware for parsing JSON data
@@ -59,7 +59,7 @@ const sendMail = (req, res) => {
   }
 };
 
-// Router kullanımını düzenle
+// Router kullanımı
 app.use(router.post("/sendmail", sendMail));
 app.use(router.get("/",  (req,res)=>res.status(200).json({ message: "Form submitted working" })));
 // Start the server
